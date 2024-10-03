@@ -17,7 +17,7 @@ api.get("/teleport/:key", (request, response) => {
 
   const url = keys[key];
 
-  if (url) return response.status(404).json({ message: "Not found" });
+  if (!url) return response.status(404).json({ message: "Not found" });
 
   response.status(200).json({ url });
 });
