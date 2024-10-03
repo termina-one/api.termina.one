@@ -1,6 +1,13 @@
 import express from "express";
+import cors from "cors";
 
 const api = express();
+
+api.use(
+  cors({
+    origin: "*",
+  })
+);
 
 api.get("/", (request, response) => {
   response.json({ message: "Hello, World! :3" });
